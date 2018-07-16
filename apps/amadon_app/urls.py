@@ -6,4 +6,6 @@ from . import views
 urlpatterns = [
     # root goes to the index
     url(r'^$', views.index),
+    url(r'process', views.process),
+    url(r'checkout',views.checkout),
 ]
