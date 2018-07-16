@@ -6,12 +6,6 @@ from django.db import models
 class UserManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
-        if len(postData['first_name']) < 3:
-            errors["first_name"] = "First name should be at least 3 characters"
-        if len(postData['last_name']) < 3:
-            errors["last_name"] = "Last name should be at least 3 characters"
-        if "@" not in postData['email']:
-            errors["email"] = "Email needs to have an @"
         return errors
 
 # This is our table

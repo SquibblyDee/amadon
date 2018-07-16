@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # Only one fresh path as all our routes lay behind /amadon
 	url(r'^amadon', include('apps.amadon_app.urls')),
 ]

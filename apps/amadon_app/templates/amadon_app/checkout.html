@@ -2,16 +2,20 @@
 <html>
     <head>
         <title>Amadon Checkout</title>
+        <!-- Link them stylesheets -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'amadon_app/css/styles.css' %}">
     </head>
     <body>
-        <h1>Thank you for your business!</h1>
-        <div class="message">
-            <h3>We charged your credit card ${{request.session.total}}</h3>
-            <h3>You have ordered {{request.session.count}} items so far and spent ${{request.session.total_spent}} with Amadon.com!</h3>
+        <div class='container'>
+            <h1>Thank you for your business!</h1>
+            <div class="message">
+                <!-- All variables on this page are pulled from session -->
+                <h3>We charged your credit card ${{request.session.total}}.</h3>
+                <h3>You have ordered {{request.session.count}} items so far and spent ${{request.session.total_spent}} with Amadon.com!</h3>
+            </div>
+            <a href='/amadon'>Go back</a>
         </div>
-        <a href='/amadon'>Go back</a>
     </body>
 </html>
