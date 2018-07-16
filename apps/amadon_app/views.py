@@ -9,8 +9,10 @@ def index(request):
     return render(request,'amadon_app/index.html', {'query' : query})
 
 def process(request, methods=['POST']):
-    print("WE IN PROCESS")
-    prin(request)
+    print(request.POST['product_id'])
+    print(request.POST['quantity'])
+    # print("PRODUCT ID ", product_id)
+    # print("QUANTITY ", quantity)
     return redirect('/amadon/checkout')
 
 def checkout(request):

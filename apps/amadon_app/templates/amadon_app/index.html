@@ -23,17 +23,22 @@
                     
                     <tr>
                         <td>{{row.name}}</td>
-                        <td>{{row.price}} <input type='hidden' name='product_id' value={{row.id}}> </td>
-                        
+                        <td>{{row.price}}</td>
+                        <form action="amadon/process" method="post">
+                        {% csrf_token %}
                         <td>
-                        <select class="custom-select">
-                            <option selected>0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                            <select class="custom-select" name="quantity">
+                                <option selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
                         </td>
-                        <td><a class="btn btn-primary" href="amadon/process" role="button">Buy!</a></td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Buy!</button>
+                            <input type='hidden' name='product_id' value='{{row.id}}'>
+                        </td>
+                        </form>
                     </tr>
                     {% endfor %}
                 </tbody>
